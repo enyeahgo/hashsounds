@@ -12,4 +12,12 @@ router.get('/s', (req, res) => {
   })
 })
 
+router.get('/register', (req, res) => {
+  res.render('register', {
+    title: 'Hash Sounds',
+    pageTitle: 'Register',
+    error: res.cookie('__session') ? res.cookie('__session').error : '',
+  })
+})
+
 module.exports = router;
